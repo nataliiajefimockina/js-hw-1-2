@@ -4,17 +4,53 @@ function pow(x, n) {
 
     var result = x;
 
-    for (var i = 1; i < n; i++) {
-        result *= x;
+    if (n > 0) {
+        for (var i = 1; i < n; i++) {
+            result *= x;
+        }
+    return result;
     }
 
-    return result;
+    if (n < 0) {
+        n *=-1;
+        for (var i = 1; i < n; i++) {
+        result *= x;
+        }
+        result = 1 / result;
+    }
+
+    if (n == 0) {
+        result = 1;
+    }
 }
 
-var x = prompt('Please enter "X" ');
-var n = prompt('Please enter "N" ');
+try {
+    //Promt for X
+    var x = prompt('Please enter "X" ');
 
-console.log( pow(x, n) );
+    if (x === ' ' || !x) {
+        throw new Error("X can't be empty");
+    }
+    if (isNaN(x)) {
+        throw new Error('Not a number!');
+    }
+
+    //Promt for N
+    var n = prompt('Please enter "N" ');
+
+    if (n === ' ' || !n) {
+        throw new Error("N can't be empty");
+    }
+    if (isNaN(x)) {
+        throw new Error('Not a number!');
+    }
+
+    console.log( pow(x, n) );
+
+}catch (e) {
+    alert(e);
+}
+
 
 //TASK #2 - Заполняем массив//
 
