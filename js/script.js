@@ -8,20 +8,21 @@ function pow(x, n) {
         for (var i = 1; i < n; i++) {
             result *= x;
         }
-    return result;
+        return result;
     }
 
     if (n < 0) {
         n *=-1;
         for (var i = 1; i < n; i++) {
-        result *= x;
+            result *= x;
         }
-        result = 1 / result;
+        return 1 / result;
     }
 
     if (n == 0) {
-        result = 1;
-    }
+       result = 1;
+   }
+   return result;
 }
 
 try {
@@ -45,7 +46,8 @@ try {
         throw new Error('Not a number!');
     }
 
-    console.log( pow(x, n) );
+    // console.log( pow(x, n) );
+    alert( pow(x, n) );
 
 }catch (e) {
     alert(e);
@@ -67,8 +69,11 @@ function addUserName() {
 addUserName();
 
 // console.log('arr User = ', user);
+var enterUser;
 
-var enterUser = prompt('add Users name');
+while(!enterUser) {
+    enterUser = prompt('add Users name');
+}
 
 // console.log('enterUser = ', enterUser);
 
