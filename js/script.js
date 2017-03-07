@@ -21,8 +21,9 @@ function pow(x, n) {
 
     if (n == 0) {
        result = 1;
-   }
-   return result;
+
+       return result;
+    } 
 }
 
 try {
